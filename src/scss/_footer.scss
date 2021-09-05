@@ -22,6 +22,9 @@
     &__column {
         &-title {
             margin-bottom: 10px;
+            &:hover {
+            cursor: default;
+            }
         }
 
         &-list:not(:last-child) {
@@ -30,8 +33,11 @@
 
         &-item {
             margin-bottom: 5px;
+            transition: background-color 0.3s;
+            &:hover {
+            color: #0060d2;
+            }
         }
-
     }
 
     &__column-icons {
