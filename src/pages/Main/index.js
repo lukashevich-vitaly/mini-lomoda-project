@@ -9,18 +9,18 @@ import child from '../../image/child.jpg';
 const Main = () => {
     return (
         <div>
-           <section class="promo">
-            <div class="container">
-                <ul class="promo__grid">
-                    <li class="promo__grid-item promo__grid-item__big"><img class="promo__grid-image" src={beach} alt="Девушка на пляже" /></li>
-                    <li class="promo__grid-item promo__grid-item__small"><img class="promo__grid-image" src={sport} alt="Девушка на спорте" /></li>
-                    <li class="promo__grid-item promo__grid-item__small"><img class="promo__grid-image" src={umbrella} alt="Девушка с зонтом" /></li>
+           <section className="promo">
+            <div className="container">
+                <ul className="promo__grid">
+                    <li className="promo__grid-item promo__grid-item__big"><img className="promo__grid-image" src={beach} alt="Девушка на пляже" /></li>
+                    <li className="promo__grid-item promo__grid-item__small"><img className="promo__grid-image" src={sport} alt="Девушка на спорте" /></li>
+                    <li className="promo__grid-item promo__grid-item__small"><img className="promo__grid-image" src={umbrella} alt="Девушка с зонтом" /></li>
                 </ul>
 
-                <ul class="promo__grid promo__grid-reverse">
-                    <li class="promo__grid-reverse-item promo__grid-reverse-item__big"><img class="promo__grid-image" src={premium} alt="Девушка в деловом стиле" /></li>
-                    <li class="promo__grid-reverse-item promo__grid-reverse-item__small"><img class="promo__grid-image" src={sneakers} alt="Кроссовки" /></li>
-                    <li class="promo__grid-reverse-item promo__grid-reverse-item__small"><img class="promo__grid-image" src={child} alt="Два ребенка" /></li>
+                <ul className="promo__grid promo__grid-reverse">
+                    <li className="promo__grid-reverse-item promo__grid-reverse-item__big"><img className="promo__grid-image" src={premium} alt="Девушка в деловом стиле" /></li>
+                    <li className="promo__grid-reverse-item promo__grid-reverse-item__small"><img className="promo__grid-image" src={sneakers} alt="Кроссовки" /></li>
+                    <li className="promo__grid-reverse-item promo__grid-reverse-item__small"><img className="promo__grid-image" src={child} alt="Два ребенка" /></li>
                 </ul>
             </div>
         </section>
