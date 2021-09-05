@@ -2,13 +2,12 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import '../scss/style.scss';
 import Main from '../pages/Main';
-import logoLomoda from '../image/logo.svg';
 import Header from '../components/Header';
+import Section from "../components/Section";
 
 
 
@@ -16,22 +15,7 @@ const Navigator = () => {
   return (
     <Router>
       <Header />
-      
-      <section className="subheader">
-            <div className="container">
-                <div className="subheader__wrapper">
-                    <nav className="subheader__navigation navigation">
-                        <ul className="navigation__list">
-                            <li className="navigation__item"><a className="navigation__link" href="goods.html#women">Женщинам</a></li>
-                            <li className="navigation__item"><a className="navigation__link" href="goods.html#men">Мужчинам</a></li>
-                            <li className="navigation__item"><a className="navigation__link" href="goods.html#kids">Детям</a></li>
-                        </ul>
-                    </nav>
-                    <Link to="/" className="subheader__logo"> <img src={logoLomoda} alt="Компания Lomoda" /> </Link>
-                    <button className="subheader__cart">Корзина</button>
-                </div>
-            </div>
-        </section>
+      <Section />
 
       <div>
         {/*<nav className='navigation-links'>
