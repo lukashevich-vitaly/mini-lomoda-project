@@ -3,7 +3,6 @@
 
     @media (max-width: 768px) {
         padding-top: 30px;
-
     }
 
     &__wrapper {
@@ -13,20 +12,15 @@
         align-items: center;
         justify-content: space-between;
         min-height: $height-subheader;
-
         @media (max-width: 768px) {
             grid-template-columns: repeat(2, 1fr);
         }
-
     }
 
     &__logo {
         display: block;
         max-width: 180px;
         justify-self: center;
-
-       
-
     }
 
     &__navigation {
@@ -45,7 +39,6 @@
         background-position: left;
         padding-left: 28px;
         border: none;
-
     }
 }
 
@@ -53,11 +46,14 @@
     &__list {
         display: flex;
         gap: 15px;
-
         @media (max-width: 768px) {
             justify-content: center;
-
         }
     }
-
+    &__item {
+        font-weight: bold;
+        &:hover {
+        color: #0060d2;
+    }
+    }
 }
