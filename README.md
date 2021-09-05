@@ -1,0 +1,1 @@
+# mini-lomoda-project
