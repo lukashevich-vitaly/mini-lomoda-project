@@ -6,7 +6,7 @@ import {
   Link
 } from "react-router-dom";
 import '../scss/style.scss';
-import Main from '../components/Main';
+import Main from '../pages/Main';
 import logo35 from '../image/35.svg';
 import logoLomoda from '../image/logo.svg';
 
