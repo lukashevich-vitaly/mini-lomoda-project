@@ -7,6 +7,7 @@ import {
 import Main from '../pages/Main';
 import Header from '../components/Header';
 import Section from "../components/Section";
+import Footer from "../components/Footer";
 
 
 
@@ -45,6 +46,7 @@ const Navigator = () => {
             <Main />
           </Route>
         </Switch>
+        <Footer />
       </div>
     </Router>
   );
