@@ -7,11 +7,11 @@ const Footer = () => {
             <div className="footer__column">
                 <h3 className="footer__column-title">Помощь</h3>
                 <ul className="footer__column-list">
-                    <li className="footer__column-item"><a className="footer__link" href="#">Статус заказа по номеру</a></li>
-                    <li className="footer__column-item"><a className="footer__link" href="#">Центр поддержки Lamoda</a></li>
-                    <li className="footer__column-item"><a className="footer__link" href="#">Как оформить заказ</a></li>
-                    <li className="footer__column-item"><a className="footer__link" href="#">Как выбрать размер</a></li>
-                    <li className="footer__column-item"><a className="footer__link" href="#">Условия доставки</a></li>
+                    <li className="footer__column-item"><a className="footer__link">Статус заказа по номеру</a></li>
+                    <li className="footer__column-item"><a className="footer__link">Центр поддержки Lamoda</a></li>
+                    <li className="footer__column-item"><a className="footer__link">Как оформить заказ</a></li>
+                    <li className="footer__column-item"><a className="footer__link">Как выбрать размер</a></li>
+                    <li className="footer__column-item"><a className="footer__link">Условия доставки</a></li>
                 </ul>
             </div>
 
@@ -20,15 +20,15 @@ const Footer = () => {
                 <ul className="footer__column-list">
                     <li className="footer__column-item">
                         <ul class="footer__column-icons">
-                            <li><a target="_blank" href="#" className="footer__social-item footer__social-item_fb"></a></li>
-                            <li><a target="_blank" href="#" className="footer__social-item footer__social-item_vk"></a></li>
-                            <li><a target="_blank" href="#" className="footer__social-item footer__social-item_yt"></a></li>
-                            <li><a target="_blank" href="#" className="footer__social-item footer__social-item_ig"></a></li>
+                            <li><a target="_blank" className="footer__social-item footer__social-item_fb"></a></li>
+                            <li><a target="_blank" className="footer__social-item footer__social-item_vk"></a></li>
+                            <li><a target="_blank" className="footer__social-item footer__social-item_yt"></a></li>
+                            <li><a target="_blank" className="footer__social-item footer__social-item_ig"></a></li>
                         </ul>
                     </li>
-                    <li className="footer__column-item"><a className="link footer__link" href="#">Fashion-блог Lamoda</a></li>
-                    <li className="footer__column-item"><a className="link footer__link" href="#">Подарочные сертификаты Lamoda</a></li>
-                    <li className="footer__column-item"><a className="link footer__link" href="#" target="_blank">Вакансии</a></li>
+                    <li className="footer__column-item"><a className="link footer__link">Fashion-блог Lamoda</a></li>
+                    <li className="footer__column-item"><a className="link footer__link">Подарочные сертификаты Lamoda</a></li>
+                    <li className="footer__column-item"><a className="link footer__link" target="_blank">Вакансии</a></li>
                 </ul>
             </div>
 
@@ -47,9 +47,9 @@ const Footer = () => {
             <div className="footer__column">
                 <h3 className="footer__column-title">Для мобильных устройств</h3>
                 <ul className="footer__column-icons footer__column-icons__app">
-                    <li><a target="_blank" className="footer__block-icon footer__icon-appstore" href="#"></a></li>
-                    <li><a target="_blank" className="footer__block-icon footer__icon-googleplay" href="#"></a></li>
-                    <li><a target="_blank" className="footer__block-icon footer__icon-huaweistore" href="#"></a></li>
+                    <li><a target="_blank" className="footer__block-icon footer__icon-appstore"></a></li>
+                    <li><a target="_blank" className="footer__block-icon footer__icon-googleplay" ></a></li>
+                    <li><a target="_blank" className="footer__block-icon footer__icon-huaweistore"></a></li>
                 </ul>
             </div>
         </div>

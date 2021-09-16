@@ -2,54 +2,44 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  useParams
 } from "react-router-dom";
+import { useSelector } from 'react-redux';
 import Main from '../pages/Main';
 import Header from '../components/Header';
 import Section from "../components/Section";
 import Footer from "../components/Footer";
-
-
+import Women from "../pages/Women";
+import Men from "../pages/Men";
+import Kids from "../pages/Kids";
+import CardWoman from "../pages/CardWoman";
+import CardMan from "../pages/CardMan";
+import CardKid from "../pages/CardKid";
 
 const Navigator = () => {
+  
   return (
     <Router>
       <Header />
       <Section />
-
       <div>
-        {/*<nav className='navigation-links'>
-          <ul>
-            <li>
-              <Link to="/">Главная</Link>
-            </li>
-            <li>
-              <Link to="/posts">Женщинам</Link>
-            </li>
-            <li>
-              <Link to="/login">Мужчинам</Link>
-            </li>
-            <li>
-              <Link to="/login">Детям</Link>
-            </li>
-          </ul>
-            </nav>*/}
-
         <Switch>
-          <Route path="/posts">
-            {/*<Posts />*/}
-          </Route>
+          <Route path={"/women/:id"} component={CardWoman} />
+          <Route path={"/men/:id"} component={CardMan} />
+          <Route path={"/kids/:id"} component={CardKid} />
+          <Route path="/women" component={Women} />
+          <Route path="/men" component={Men} />
+          <Route path="/kids" component={Kids} />
           <Route path="/login">
             {/*<Login />*/}
           </Route>
-          <Route path="/">
-            <Main />
-          </Route>
+          <Route path="/" component={Main} />
         </Switch>
         <Footer />
       </div>
     </Router>
   );
-}
+};
 
 export default Navigator;
