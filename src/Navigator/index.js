@@ -2,10 +2,8 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  useParams
+  Route
 } from "react-router-dom";
-import { useSelector } from 'react-redux';
 import Main from '../pages/Main';
 import Header from '../components/Header';
 import Section from "../components/Section";
@@ -18,7 +16,7 @@ import CardMan from "../pages/CardMan";
 import CardKid from "../pages/CardKid";
 
 const Navigator = () => {
-  
+
   return (
     <Router>
       <Header />
@@ -31,13 +29,10 @@ const Navigator = () => {
           <Route path="/women" component={Women} />
           <Route path="/men" component={Men} />
           <Route path="/kids" component={Kids} />
-          <Route path="/login">
-            {/*<Login />*/}
-          </Route>
           <Route path="/" component={Main} />
         </Switch>
-        <Footer />
       </div>
+      <Footer />
     </Router>
   );
 };

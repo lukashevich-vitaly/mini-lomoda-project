@@ -2,11 +2,26 @@ import db from './db.json';
 
 const initialState = {
     cards: db,
-    city: 'Укажите свой город'
+    city: 'Укажите свой город',
+    modalBasket: false
 };
   
 const reducer = (state = initialState, action) => {
-    return state
+    if(action.type === 'OPEN_BASKET'){
+        return {
+            ...state,
+            modalBasket: action.payload
+        }
+    };
+
+    if(action.type === 'CLOSE_BASKET'){
+        return {
+            ...state,
+            modalBasket: action.payload
+        }
+    };
+
+    return state;
 };
 
 export default reducer;
