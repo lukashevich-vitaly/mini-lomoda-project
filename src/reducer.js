@@ -21,6 +21,13 @@ const reducer = (state = initialState, action) => {
         }
     };
 
+    if(action.type === 'SELECT_CITY'){
+        return {
+            ...state,
+            city: action.payload
+        }
+    };
+
     return state;
 };
 

@@ -1,15 +1,19 @@
 import '../../scss/style.scss';
 import logo35 from '../../image/35.svg';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 
 
 const Header = () => {
+  const dispatch = useDispatch();
   const city = useSelector((state) => {return state.city});
   
   const selectCity = () => {
-    const city = prompt('Укажите город');
-  }
+    dispatch({
+      type: 'SELECT_CITY',
+      payload: prompt('Укажите свой город') 
+    })
+  };
 
     return (
       <header className="header">
