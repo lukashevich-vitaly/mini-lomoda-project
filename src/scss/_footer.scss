@@ -36,6 +36,7 @@
             margin-bottom: 5px;
             transition: background-color 0.3s;
             &:hover {
+            cursor: pointer;
             color: #0060d2;
             }
         }
@@ -100,19 +101,19 @@
 
     &__icon-mastercard {
         width: 43px;
-    height: 28px;
+        height: 28px;
         background-image: url(../image/footer__icon-mastercard.svg);
     }
 
     &__icon-visa {
         width: 49px;
-    height: 16px;
+        height: 16px;
         background-image: url(../image/footer__icon-visa.svg);
     }
 
     &__icon-mir {
         width: 57px;
-    height: 16px;
+        height: 16px;
         background-image: url(../image/footer__icon-mir.svg);
     }
 
@@ -127,14 +128,23 @@
 
     &__icon-appstore {
         background-image: url(../image/footer__icon-appstore.svg);
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     &__icon-googleplay {
         background-image: url(../image/footer__icon-googleplay.svg);
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     &__icon-huaweistore {
         background-image: url(../image/footer__icon-huaweistore.svg);
+        &:hover {
+            cursor: pointer;
+        }
     }
 
 }
