@@ -1,6 +1,17 @@
 import React from "react";
+import { useSelector, useDispatch } from 'react-redux';
 
 const ModalBasket = (props) => {
+    const dispatch = useDispatch();
+    const goods = useSelector((state) => {return state.basket});
+    const totalPrice = goods.reduce((a,b) => a + b.cost, 0);
+    /*const onDeleteFromBasket = () => {
+        dispatch({
+            type: 'DELETE_FROM_BASKET',
+            payload: good 
+          })
+    };*/
+
 
     return (
         <div className={`${props.isOpened ? "cart-overlay-open" : "cart-overlay"}`}>
@@ -27,30 +38,31 @@ const ModalBasket = (props) => {
                         </tr>
                     </thead>
                     <tbody className="cart__list-goods">
+                        {goods.length === 0 &&
                         <tr>
-                            <td>1</td>
-                            <td>New Balance Леггинсы NB Essentials Botanical Legging</td>
                             <td>-</td>
-                            <td>42/44</td>
-                            <td>103 BYN</td>
+                            <td>Товары отсутствуют, корзина пуста</td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>---</td>
                             <td><button className="btn-delete">&times;</button></td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Adidas Костюм спортивный W TS CO ENERGIZ</td>
-                            <td>-</td>
-                            <td>42/44</td>
-                            <td>274 BYN</td>
-                            <td><button className="btn-delete">&times;</button></td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Befree Топ Exclusive online</td>
-                            <td>Фиолетовый</td>
-                            <td>42</td>
-                            <td>21 BYN</td>
-                            <td><button className="btn-delete">&times;</button></td>
-                        </tr>
+                        </tr>}
+                        {goods.length > 0 && goods.map(good => {
+                            return (
+                                <tr>
+                                    <td>{goods.indexOf(good) + 1}</td>
+                                    <td>{good.name} {good.brand}</td>
+                                    <td>{good.color ? good.color[0] : '-'}</td>
+                                    <td>{good.sizes ? good.sizes[0] : '-'}</td>
+                                    <td>{good.cost} BYN</td>
+                                    <td><button className="btn-delete" onClick={() => { dispatch({
+                                        type: 'DELETE_FROM_BASKET',
+                                        payload: good.id 
+                                        })
+                                    }}>&times;</button></td>
+                                </tr>  
+                            )
+                        })}
                     </tbody>
                     <tfoot>
                         <tr>
@@ -61,7 +73,7 @@ const ModalBasket = (props) => {
                                 </div>
                             </th>
                             <th>Итого:</th>
-                            <th className="cart__total-cost" colspan="2">398 BYN</th>
+                            <th className="cart__total-cost" colspan="2">{totalPrice} BYN</th>
                         </tr>
                     </tfoot>
                 </table>

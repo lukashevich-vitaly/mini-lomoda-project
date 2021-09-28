@@ -28,8 +28,8 @@ const Women = () => {
                     </li>
         )
             })}
-    </ul>
-          </div>
+            </ul>
+        </div>
     )            
 };
 

@@ -1,9 +1,11 @@
 import React from "react";
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from "react-router-dom";
 
 const CardKid = () => {
+    const dispatch = useDispatch();
     const cards = useSelector((state) => {return state.cards});
+    const basket = useSelector((state) => {return state.basket});
     let { id } = useParams();
 
     const findCardById = (id) => {
@@ -11,6 +13,13 @@ const CardKid = () => {
       };
 
     let card = findCardById(id);
+
+    const onAddInBasket = () => {
+        dispatch({
+            type: 'ADD_IN_BASKET',
+            payload: [...basket, card] 
+          })
+    };
 
     return (
         <section className="card-good" key={card.id}>
@@ -53,7 +62,7 @@ const CardKid = () => {
                     </div>
                     
 
-                    <button className="card-good__buy">Добавить в корзину</button>
+                    <button className="card-good__buy" onClick={onAddInBasket}>Добавить в корзину</button>
                 </div>
             </div>
 
