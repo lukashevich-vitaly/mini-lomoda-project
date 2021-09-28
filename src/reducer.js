@@ -4,7 +4,8 @@ const initialState = {
     cards: db,
     city: 'Укажите свой город',
     modalBasket: false,
-    basket: []
+    basket: [],
+    promo: ''
 };
   
 const reducer = (state = initialState, action) => {
@@ -40,6 +41,13 @@ const reducer = (state = initialState, action) => {
         return {
             ...state,
             basket: state.basket.filter((good) => good.id !== action.payload) 
+        }
+    };
+
+    if(action.type === 'CHANGE_PROMO'){
+        return {
+            ...state,
+            promo: action.payload
         }
     };
 

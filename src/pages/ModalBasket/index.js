@@ -5,13 +5,16 @@ const ModalBasket = (props) => {
     const dispatch = useDispatch();
     const goods = useSelector((state) => {return state.basket});
     const totalPrice = goods.reduce((a,b) => a + b.cost, 0);
-    /*const onDeleteFromBasket = () => {
-        dispatch({
-            type: 'DELETE_FROM_BASKET',
-            payload: good 
-          })
-    };*/
+    const promo = useSelector((state) => {return state.promo});
+    const percent = 30;
+    const sale = percent/100;
 
+    const onChangePromo = (event) => {
+        dispatch({
+            type: 'CHANGE_PROMO',
+            payload: event.target.value
+          })
+    };
 
     return (
         <div className={`${props.isOpened ? "cart-overlay-open" : "cart-overlay"}`}>
@@ -69,11 +72,11 @@ const ModalBasket = (props) => {
                             <th colspan="3">
                                 <div className="cart__wrapper-promo">
                                     <label for="promo">Промо-код:</label>
-                                    <input className="cart__promo" id="promo" type="text" />
+                                    <input className="cart__promo" id="promo" value={promo} onChange = {onChangePromo} type="text" />
                                 </div>
                             </th>
                             <th>Итого:</th>
-                            <th className="cart__total-cost" colspan="2">{totalPrice} BYN</th>
+                            <th className="cart__total-cost" colspan="2">{promo === 'TeachMeSkills' ? (totalPrice - totalPrice*sale) : totalPrice} BYN</th>
                         </tr>
                     </tfoot>
                 </table>
