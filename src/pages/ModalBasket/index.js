@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 
 const ModalBasket = (props) => {
@@ -8,12 +8,21 @@ const ModalBasket = (props) => {
     const promo = useSelector((state) => {return state.promo});
     const percent = 30;
     const sale = percent/100;
+    const [buy, setBuy] = useState('Оформить');
 
     const onChangePromo = (event) => {
         dispatch({
             type: 'CHANGE_PROMO',
             payload: event.target.value
           })
+    };
+
+    const onBuy = () => {
+        if (goods.length === 0) {
+            return setBuy('Оформить')
+        } else {
+            return setBuy('Заказ оформлен')
+        }
     };
 
     return (
@@ -81,7 +90,7 @@ const ModalBasket = (props) => {
                     </tfoot>
                 </table>
             </div>
-            <button className="cart__btn-buy">Оформить</button>
+            <button className="cart__btn-buy" onClick={onBuy}>{buy}</button>
             <button className="cart__btn-close" onClick={props.onModalClose}></button>
         </div>
     </div>

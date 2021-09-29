@@ -62,7 +62,7 @@ const CardWoman = () => {
                     </div>
                     
 
-                    <button className="card-good__buy" onClick={onAddInBasket}>Добавить в корзину</button>
+                    <button className="card-good__buy" onClick={onAddInBasket}> {basket.some(card => card.id === id) ? 'Товар в корзине' : 'Добавить в корзину'} </button>
                 </div>
             </div>
 
